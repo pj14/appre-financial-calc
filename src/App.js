@@ -1,7 +1,7 @@
 // src/App.js
 
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import HomePage from "./HomePage";
 import SavingsCalculator from "./calculators/savings/SavingsCalculator";
 import BudgetCalculator from "./calculators/budget/BudgetCalculator";
