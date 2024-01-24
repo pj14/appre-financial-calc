@@ -19,7 +19,7 @@ const HomePage = () => {
           <div className="created-by-section">
             <div>Created By</div>
             <div className="appre-logo">
-              <img src="/appre-logo.png" alt="Appre Logo" />
+              <img src="appre-logo.png" alt="Appre Logo" />
             </div>
           </div>
         </div>
