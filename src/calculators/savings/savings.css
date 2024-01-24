@@ -1,0 +1,49 @@
+.saving-results-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+}
+
+.savings-disclaimer {
+    text-align: center;
+}
+
+.savings-results {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    width: 90%;
+}
+
+.results-row {
+    font-weight: 700;
+}
+
+.results-row > span {
+    margin-right: 8px;
+}
+
+.savings-amount.blurred {
+    filter: blur(2.5px);
+    -webkit-filter: blur(3px);
+}
+
+.eguide-info {
+    text-align: center;
+    font-weight: 700;
+}
+
+.other-options-wrapper { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 32px;
+}
+
+.other-options-wrapper > span {
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+

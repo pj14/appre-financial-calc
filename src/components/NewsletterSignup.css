@@ -1,0 +1,83 @@
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    font-size: 14px;
+}
+
+.signup-checkbox {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.signup-checkbox input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 8px;
+    border: none;
+    border-radius: 12px;
+    background: #D9D9D9;
+    text-align: center;
+
+  }
+
+  .signup-checkbox input[type="checkbox"]::before {
+    content: "";
+    content: "✔";
+    transform: scale(0);
+    width: 48px;
+    height: 40px;
+
+  }
+
+  .signup-checkbox input[type="checkbox"]:checked::before {
+    transform: scale(1);
+  }
+
+  .signup-checkbox input[type="checkbox"]:hover {
+    color: black;
+  }
+
+ .signup-checkbox input {
+    transition-duration: .3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: all;
+    cursor: pointer;
+    width: 56px;
+    height: 40px;
+} 
+
+.email-address-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.email-address-input > input {
+    padding: 8px;
+    border: 1px solid #d9d9d9;
+    border-radius: 12px;
+    font-weight: 700;
+    background: #d9d9d9;
+    min-width: 265px;
+    outline: none;
+}
+
+.email-address-input.disabled > input {
+    cursor: not-allowed;
+}
+
+.email-warning {
+    color: rgb(130, 26, 26);
+    margin: 0.5rem 0 0; 
+    font-size: 14px;
+}
+
+
