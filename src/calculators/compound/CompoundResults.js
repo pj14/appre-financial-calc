@@ -1,23 +1,22 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { maskNumbers } from "../../utils/uitilityFunctions";
-import compoundImage from "../../assets/compound-calculator.png";
-import savingsImage from "../../assets/savings-calculator.png";
 import EguideInfo from "../../components/EguideInfo";
 import NewsletterSignup from "../../components/NewsletterSignup";
 import GetResults from "../../components/GetResults";
 
-const BudgetResults = (props) => {
-  const { salaryAmount, afterTaxIncome, needs, wants, savings } = props;
-  const [isBlurred, setIsBlurred] = useState(true);
+import savingsImage from "../../assets/savings-calculator.png";
+import budgetImage from "../../assets/budget-calculator.png";
 
+const CompoundResults = (props) => {
+  const { initialInvestment, compoundedValue, years } = props;
+
+  const [isBlurred, setIsBlurred] = useState(true);
   const [getResultsDisabled, setGetResultsDisabled] = useState(true);
 
   const [emailInputDisabled, setEmailInputDisabled] = useState(false);
 
-  const maskedNeedsAmount = maskNumbers(needs);
-  const maskedWantsAmount = maskNumbers(wants);
-  const maskedSavingsAmount = maskNumbers(savings);
+  const maskedAmount = maskNumbers(compoundedValue);
 
   const showResults = () => {
     setIsBlurred(false);
@@ -30,26 +29,14 @@ const BudgetResults = (props) => {
         advice.
       </div>
       <div className="savings-results">
-        <div className="results-row">{`Yearly Salary: ${salaryAmount}`}</div>
         <div className="results-row">
-          <span>{`Effective income after tax: ${afterTaxIncome}`}</span>
+          <span>Value Now:</span>
+          <span className={`savings-amount`}>{`£${initialInvestment}`}</span>
         </div>
         <div className="results-row">
-          <span>50% Needs:</span>
+          <span>{`Value after ${years} years: `}</span>
           <span className={`savings-amount ${isBlurred && "blurred"}`}>{`£${
-            isBlurred ? maskedNeedsAmount : needs
-          }`}</span>
-        </div>
-        <div className="results-row">
-          <span>30% Wants:</span>
-          <span className={`savings-amount ${isBlurred && "blurred"}`}>{`£${
-            isBlurred ? maskedWantsAmount : wants
-          }`}</span>
-        </div>
-        <div className="results-row">
-          <span>20% Investing/Saving:</span>
-          <span className={`savings-amount ${isBlurred && "blurred"}`}>{`£${
-            isBlurred ? maskedSavingsAmount : savings
+            isBlurred ? maskedAmount : compoundedValue
           }`}</span>
         </div>
       </div>
@@ -73,15 +60,15 @@ const BudgetResults = (props) => {
             <nav>
               <ul>
                 <li>
-                  <Link to="/compound-calculator" className="nav-link">
-                    <img src={compoundImage} alt="Compound" />
-                    <span>Compound Calculator</span>
-                  </Link>
-                </li>
-                <li>
                   <Link to="/savings-calculator" className="nav-link">
                     <img src={savingsImage} alt="Savings" />
                     <span>Saving Calculator</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/budget-calculator" className="nav-link">
+                    <img src={budgetImage} alt="Budget" />
+                    <span>Budget Calculator</span>
                   </Link>
                 </li>
               </ul>
@@ -93,4 +80,4 @@ const BudgetResults = (props) => {
   );
 };
 
-export default BudgetResults;
+export default CompoundResults;

@@ -5,7 +5,7 @@ import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import HomePage from "./HomePage";
 import SavingsCalculator from "./calculators/savings/SavingsCalculator";
 import BudgetCalculator from "./calculators/budget/BudgetCalculator";
-import CompoundCalculator from "./calculators/CompoundCalculator";
+import CompoundCalculator from "./calculators/compound/CompoundCalculator";
 import ErrorPage from "./error-page";
 
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS

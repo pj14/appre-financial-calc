@@ -1,0 +1,5 @@
+.interest-rate-input.disabled > input {
+    cursor: not-allowed;
+    background: #aaa;
+    border: 1px solid #aaa;
+}

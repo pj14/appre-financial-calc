@@ -76,3 +76,32 @@ export const calculateBudgetResults = (annualIncome) => {
     savingInvesting,
   };
 };
+
+export const calculateCompoundInterest = (
+  principal,
+  monthlyContribution,
+  annualInterestRate,
+  years
+) => {
+  console.log(
+    "principal",
+    principal,
+    "monthlyContribution",
+    monthlyContribution,
+    "annualInterestRate",
+    annualInterestRate,
+    "years",
+    years
+  );
+  const monthlyInterestRate = annualInterestRate / 12 / 100;
+  const totalMonths = years * 12;
+
+  let futureValue = principal;
+
+  for (let month = 1; month <= totalMonths; month++) {
+    futureValue =
+      (futureValue + monthlyContribution) * (1 + monthlyInterestRate);
+  }
+
+  return futureValue.toFixed(2); // Round to two decimal places
+};
