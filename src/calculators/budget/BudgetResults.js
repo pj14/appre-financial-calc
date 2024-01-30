@@ -8,7 +8,15 @@ import NewsletterSignup from "../../components/NewsletterSignup";
 import GetResults from "../../components/GetResults";
 
 const BudgetResults = (props) => {
-  const { salaryAmount, afterTaxIncome, needs, wants, savings } = props;
+  const {
+    salaryAmount,
+    afterTaxIncome,
+    needs,
+    wants,
+    savings,
+    niContribution,
+    afterNIIncome,
+  } = props;
   const [isBlurred, setIsBlurred] = useState(true);
 
   const [getResultsDisabled, setGetResultsDisabled] = useState(true);
@@ -33,6 +41,9 @@ const BudgetResults = (props) => {
         <div className="results-row">{`Yearly Salary: ${salaryAmount}`}</div>
         <div className="results-row">
           <span>{`Effective income after tax: ${afterTaxIncome}`}</span>
+        </div>
+        <div className="results-row">
+          <span>{`Total NI contribution: ${niContribution}`}</span>
         </div>
         <div className="results-row">
           <span>50% Needs:</span>
