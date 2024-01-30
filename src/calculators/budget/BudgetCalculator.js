@@ -7,6 +7,8 @@ const BudgetCalculator = () => {
   const [amount, setAmount] = useState(30000);
 
   const [afterTaxIncome, setAfterTaxIncome] = useState(0);
+  const [afterNIIncome, setAfterNIIncome] = useState(0);
+  const [niContribution, setNiContribution] = useState(0);
   const [needs, setNeeds] = useState(0);
   const [wants, setWants] = useState(0);
   const [savings, setSavings] = useState(0);
@@ -30,8 +32,14 @@ const BudgetCalculator = () => {
 
   const calculateResults = () => {
     try {
-      const { afterTaxIncome, needs, wants, savingInvesting } =
-        calculateBudgetResults(amount);
+      const {
+        afterTaxIncome,
+        niContribution,
+        afterNIIncome,
+        needs,
+        wants,
+        savingInvesting,
+      } = calculateBudgetResults(amount);
 
       console.log(
         "needs",
@@ -39,10 +47,16 @@ const BudgetCalculator = () => {
         "wants",
         wants,
         "savingInvesting",
-        savingInvesting
+        savingInvesting,
+        "niContribution",
+        niContribution,
+        "afterNIIncome",
+        afterNIIncome
       );
 
       setAfterTaxIncome(afterTaxIncome.toFixed(2));
+      setAfterNIIncome(afterNIIncome.toFixed(2));
+      setNiContribution(niContribution.toFixed(2));
       setNeeds(needs.toFixed(2));
       setWants(wants.toFixed(2));
       setSavings(savingInvesting.toFixed(2));
@@ -52,6 +66,8 @@ const BudgetCalculator = () => {
       console.error("Error in calculating budgets", error);
 
       setAfterTaxIncome(0.0);
+      setAfterNIIncome(0.0);
+      setNiContribution(0.0);
       setNeeds(0.0);
       setWants(0.0);
       setSavings(0.0);
@@ -78,6 +94,8 @@ const BudgetCalculator = () => {
           <BudgetResults
             salaryAmount={amount}
             afterTaxIncome={afterTaxIncome}
+            niContribution={niContribution}
+            afterNIIncome={afterNIIncome}
             needs={needs}
             wants={wants}
             savings={savings}

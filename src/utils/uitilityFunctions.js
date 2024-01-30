@@ -32,6 +32,16 @@ export const calculateBudgetResults = (annualIncome) => {
   const basicRateThreshold = 50270; // Basic rate threshold
   const higherRateThreshold = 125140; // Higher rate threshold
 
+  // National Insurance details (weekly amounts)
+  const niThreshold1Weekly = 241; // First National Insurance threshold
+  const niThreshold2Weekly = 967; // Second National Insurance threshold
+  const niRate1 = 0; // First National Insurance rate (0%)
+  const niRate2 = 0.1; // Second National Insurance rate (10%)
+  const niRate3 = 0.02; // Third National Insurance rate (2%)
+
+  // Convert annual income to weekly income
+  const weeklyIncome = annualIncome / 52;
+
   // Calculate taxable income
   const taxableIncome = Math.max(0, annualIncome - personalAllowance);
 
@@ -53,27 +63,45 @@ export const calculateBudgetResults = (annualIncome) => {
       (taxableIncome - higherRateThreshold) * 0.45;
   }
 
-  // Calculate after-tax income
+  // Calculate National Insurance
+  let niContribution = 0;
+  if (weeklyIncome > niThreshold1Weekly) {
+    niContribution +=
+      Math.min(niThreshold2Weekly, weeklyIncome) * niRate1 +
+      Math.max(
+        0,
+        Math.min(weeklyIncome, niThreshold2Weekly) - niThreshold1Weekly
+      ) *
+        niRate2 +
+      Math.max(0, weeklyIncome - niThreshold2Weekly) * niRate3;
+  }
+
+  // Convert the annual income to after-tax income
   const afterTaxIncome = annualIncome - incomeTax;
 
+  // Calculate remaining income after NI
+  const remainingIncome = afterTaxIncome - niContribution * 52;
+
   // Calculate monthly income
-  const monthlyIncome = afterTaxIncome / 12;
+  const monthlyIncome = remainingIncome / 12;
 
   // Percentage allocations
   const needsPercentage = 0.5;
   const wantsPercentage = 0.3;
   const savingPercentage = 0.2;
 
-  // Calculate budget components
+  // Calculate budget components for the whole year
   const needs = monthlyIncome * needsPercentage;
   const wants = monthlyIncome * wantsPercentage;
   const savingInvesting = monthlyIncome * savingPercentage;
 
   return {
-    afterTaxIncome,
     needs,
     wants,
     savingInvesting,
+    afterTaxIncome,
+    niContribution,
+    afterNIIncome: monthlyIncome * 12,
   };
 };
 
@@ -83,16 +111,6 @@ export const calculateCompoundInterest = (
   annualInterestRate,
   years
 ) => {
-  console.log(
-    "principal",
-    principal,
-    "monthlyContribution",
-    monthlyContribution,
-    "annualInterestRate",
-    annualInterestRate,
-    "years",
-    years
-  );
   const monthlyInterestRate = annualInterestRate / 12 / 100;
   const totalMonths = years * 12;
 
@@ -104,4 +122,18 @@ export const calculateCompoundInterest = (
   }
 
   return futureValue.toFixed(2); // Round to two decimal places
+};
+
+export const signupForWaitlist = (email) => {
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(email),
+  };
+  fetch("https://getlaunchlist.com/s/x2Iysg", options)
+    .then((response) => response.json())
+    .then((data) => console.log("waitlist success: ", data))
+    .catch((error) => console.error("Error signing up for waitlist: ", error));
 };

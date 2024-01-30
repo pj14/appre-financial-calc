@@ -147,7 +147,7 @@ const SavingsCalculator = () => {
 
                     <input
                       type="number"
-                      min="1"
+                      min="0"
                       step="1"
                       id="yearsInput"
                       value={years}
