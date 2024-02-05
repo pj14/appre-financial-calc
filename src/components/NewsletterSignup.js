@@ -3,31 +3,44 @@ import "./NewsletterSignup.css";
 import { validateEmail } from "../utils/uitilityFunctions";
 
 const NewsletterSignup = (props) => {
-  const { emailInputDisabled, setGetResultsDisabled, setEmailInputDisabled } =
-    props;
+  const {
+    emailInputDisabled,
+    setGetResultsDisabled,
+    setEmailInputDisabled,
+    newsletterChecked,
+    setNewsletterChecked,
+    waitlistChecked,
+    setWaitlistChecked,
+    noSignupChecked,
+    setNoSignupChecked,
+    emailAddress,
+    setEmailAddress,
+    isValidEmail,
+    setIsValidEmail,
+  } = props;
 
-  const [newsletterChecked, setNewsletterChecked] = useState(true);
-  const [waitlistChecked, setWaitlistChecked] = useState(true);
-  const [noSignupChecked, setNoSignupChecked] = useState(false);
-  const [emailAddress, setEmailAddress] = useState("");
-  const [isValidEmail, setIsValidEmail] = useState(true);
+  // const [newsletterChecked, setNewsletterChecked] = useState(true);
+  // const [waitlistChecked, setWaitlistChecked] = useState(true);
+  // const [noSignupChecked, setNoSignupChecked] = useState(false);
+  // const [emailAddress, setEmailAddress] = useState("");
+  // const [isValidEmail, setIsValidEmail] = useState(true);
 
-  useEffect(() => {
-    if (newsletterChecked || waitlistChecked) {
-      setEmailInputDisabled(false);
-      setGetResultsDisabled(true);
-    } else if (noSignupChecked) {
-      setEmailInputDisabled(true);
-      setGetResultsDisabled(false);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [newsletterChecked, waitlistChecked, noSignupChecked]);
+  // useEffect(() => {
+  //   if (newsletterChecked || waitlistChecked) {
+  //     setEmailInputDisabled(false);
+  //     setGetResultsDisabled(true);
+  //   } else if (noSignupChecked) {
+  //     setEmailInputDisabled(true);
+  //     setGetResultsDisabled(false);
+  //   }
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [newsletterChecked, waitlistChecked, noSignupChecked]);
 
-  useEffect(() => {
-    if (emailAddress.length > 0 && isValidEmail) setGetResultsDisabled(false);
-    else if (!isValidEmail) setGetResultsDisabled(true);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [emailAddress, isValidEmail]);
+  // useEffect(() => {
+  //   if (emailAddress.length > 0 && isValidEmail) setGetResultsDisabled(false);
+  //   else if (!isValidEmail) setGetResultsDisabled(true);
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [emailAddress, isValidEmail]);
 
   const newsletterOnchangeHandler = () => {
     setNewsletterChecked(!newsletterChecked);

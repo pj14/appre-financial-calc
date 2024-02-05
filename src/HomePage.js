@@ -47,13 +47,9 @@ const HomePage = () => {
             </li>
           </ul>
         </nav>
-        <section>
-          {/* Add more content here as needed */}
-          <p>This is the home page content.</p>
-        </section>
       </main>
       <footer>
-        <p>&copy; 2024 Your Company</p>
+        <p>&copy; 2024 Appre, Ltd.</p>
       </footer>
     </div>
   );

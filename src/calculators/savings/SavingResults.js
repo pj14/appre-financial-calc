@@ -1,5 +1,5 @@
-import React, { useState, useCallback } from "react";
-import { maskNumbers } from "../../utils/uitilityFunctions";
+import React, { useState } from "react";
+import { maskNumbers, signupForWaitlist } from "../../utils/uitilityFunctions";
 import { Link } from "react-router-dom";
 import "./savings.css";
 import EguideInfo from "../../components/EguideInfo";
@@ -7,6 +7,7 @@ import NewsletterSignup from "../../components/NewsletterSignup";
 import GetResults from "../../components/GetResults";
 import compoundImage from "../../assets/compound-calculator.png";
 import budgetImage from "../../assets/budget-calculator.png";
+import useNewsletterHook from "../../utils/useNewsletterHook";
 
 const SavingResults = (props) => {
   const {
@@ -21,11 +22,27 @@ const SavingResults = (props) => {
 
   const [emailInputDisabled, setEmailInputDisabled] = useState(false);
 
+  const {
+    newsletterChecked,
+    setNewsletterChecked,
+    waitlistChecked,
+    setWaitlistChecked,
+    noSignupChecked,
+    setNoSignupChecked,
+    emailAddress,
+    setEmailAddress,
+    isValidEmail,
+    setIsValidEmail,
+  } = useNewsletterHook({ setGetResultsDisabled, setEmailInputDisabled });
+
   const maskedDaySavings = maskNumbers(perDaySavings);
   const maskedWeekDigits = maskNumbers(perWeekSavings);
   const maskedMonthlyDigits = maskNumbers(perMonthSavings);
 
   const showResults = () => {
+    if (waitlistChecked || newsletterChecked) {
+      signupForWaitlist(emailAddress);
+    }
     setIsBlurred(false);
   };
 
@@ -62,6 +79,16 @@ const SavingResults = (props) => {
             setGetResultsDisabled={setGetResultsDisabled}
             emailInputDisabled={emailInputDisabled}
             setEmailInputDisabled={setEmailInputDisabled}
+            newsletterChecked={newsletterChecked}
+            setNewsletterChecked={setNewsletterChecked}
+            waitlistChecked={waitlistChecked}
+            setWaitlistChecked={setWaitlistChecked}
+            noSignupChecked={noSignupChecked}
+            setNoSignupChecked={setNoSignupChecked}
+            emailAddress={emailAddress}
+            setEmailAddress={setEmailAddress}
+            isValidEmail={isValidEmail}
+            setIsValidEmail={setIsValidEmail}
           />
           <GetResults
             getResultsDisabled={getResultsDisabled}
