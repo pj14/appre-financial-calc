@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/appre-financial-calc/static/css/main.74d5ce89.css",
-    "main.js": "/appre-financial-calc/static/js/main.dfdcbd97.js",
+    "main.js": "/appre-financial-calc/static/js/main.f537c871.js",
     "static/js/787.d7dd4861.chunk.js": "/appre-financial-calc/static/js/787.d7dd4861.chunk.js",
     "static/media/budget-calculator.png": "/appre-financial-calc/static/media/budget-calculator.9fdd4da8d91206284dd3.png",
     "static/media/compound-calculator.png": "/appre-financial-calc/static/media/compound-calculator.5f12ff4fe1eff7924556.png",
     "static/media/savings-calculator.png": "/appre-financial-calc/static/media/savings-calculator.c2773f86612219021282.png",
     "index.html": "/appre-financial-calc/index.html",
     "main.74d5ce89.css.map": "/appre-financial-calc/static/css/main.74d5ce89.css.map",
-    "main.dfdcbd97.js.map": "/appre-financial-calc/static/js/main.dfdcbd97.js.map",
+    "main.f537c871.js.map": "/appre-financial-calc/static/js/main.f537c871.js.map",
     "787.d7dd4861.chunk.js.map": "/appre-financial-calc/static/js/787.d7dd4861.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.74d5ce89.css",
-    "static/js/main.dfdcbd97.js"
+    "static/js/main.f537c871.js"
   ]
 }
