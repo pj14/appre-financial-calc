@@ -125,12 +125,12 @@ export const calculateCompoundInterest = (
 };
 
 export const signupForWaitlist = (email) => {
+  const data = new FormData();
+  data.append("email", email);
+
   const options = {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(email),
+    body: data,
   };
   fetch("https://getlaunchlist.com/s/x2Iysg", options)
     .then((response) => response.json())

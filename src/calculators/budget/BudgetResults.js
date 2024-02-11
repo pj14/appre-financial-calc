@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { maskNumbers } from "../../utils/uitilityFunctions";
+import { maskNumbers, signupForWaitlist } from "../../utils/uitilityFunctions";
 import compoundImage from "../../assets/compound-calculator.png";
 import savingsImage from "../../assets/savings-calculator.png";
 import EguideInfo from "../../components/EguideInfo";
 import NewsletterSignup from "../../components/NewsletterSignup";
 import GetResults from "../../components/GetResults";
+import useNewsletterHook from "../../utils/useNewsletterHook";
 
 const BudgetResults = (props) => {
   const {
@@ -27,7 +28,23 @@ const BudgetResults = (props) => {
   const maskedWantsAmount = maskNumbers(wants);
   const maskedSavingsAmount = maskNumbers(savings);
 
+  const {
+    newsletterChecked,
+    setNewsletterChecked,
+    waitlistChecked,
+    setWaitlistChecked,
+    noSignupChecked,
+    setNoSignupChecked,
+    emailAddress,
+    setEmailAddress,
+    isValidEmail,
+    setIsValidEmail,
+  } = useNewsletterHook({ setGetResultsDisabled, setEmailInputDisabled });
+
   const showResults = () => {
+    if (waitlistChecked || newsletterChecked) {
+      signupForWaitlist(emailAddress);
+    }
     setIsBlurred(false);
   };
 
@@ -71,6 +88,16 @@ const BudgetResults = (props) => {
             setGetResultsDisabled={setGetResultsDisabled}
             emailInputDisabled={emailInputDisabled}
             setEmailInputDisabled={setEmailInputDisabled}
+            newsletterChecked={newsletterChecked}
+            setNewsletterChecked={setNewsletterChecked}
+            waitlistChecked={waitlistChecked}
+            setWaitlistChecked={setWaitlistChecked}
+            noSignupChecked={noSignupChecked}
+            setNoSignupChecked={setNoSignupChecked}
+            emailAddress={emailAddress}
+            setEmailAddress={setEmailAddress}
+            isValidEmail={isValidEmail}
+            setIsValidEmail={setIsValidEmail}
           />
           <GetResults
             getResultsDisabled={getResultsDisabled}
