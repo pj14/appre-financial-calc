@@ -55,12 +55,15 @@ const BudgetResults = (props) => {
         advice.
       </div>
       <div className="savings-results">
-        <div className="results-row">{`Yearly Salary: ${salaryAmount}`}</div>
+        <div className="results-row">{`Yearly Salary: £${salaryAmount}`}</div>
         <div className="results-row">
-          <span>{`Effective income after tax: ${afterTaxIncome}`}</span>
+          <span>{`Effective income after tax: £${afterTaxIncome}`}</span>
         </div>
         <div className="results-row">
-          <span>{`Total NI contribution: ${niContribution}`}</span>
+          <span>{`Total NI contribution: £${niContribution}`}</span>
+        </div>
+        <div className="results-row">
+          <span>{`Note: The results below show monthly contributions towards each category.`}</span>
         </div>
         <div className="results-row">
           <span>50% Needs:</span>
