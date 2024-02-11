@@ -33,7 +33,7 @@ export const calculateBudgetResults = (annualIncome) => {
   const higherRateThreshold = 125140; // Higher rate threshold
 
   // National Insurance details (weekly amounts)
-  const niThreshold1Weekly = 241; // First National Insurance threshold
+  const niThreshold1Weekly = 242; // First National Insurance threshold
   const niThreshold2Weekly = 967; // Second National Insurance threshold
   const niRate1 = 0; // First National Insurance rate (0%)
   const niRate2 = 0.1; // Second National Insurance rate (10%)
@@ -79,6 +79,8 @@ export const calculateBudgetResults = (annualIncome) => {
   // Convert the annual income to after-tax income
   const afterTaxIncome = annualIncome - incomeTax;
 
+  const totalNiContribution = niContribution * 52;
+
   // Calculate remaining income after NI
   const remainingIncome = afterTaxIncome - niContribution * 52;
 
@@ -100,7 +102,7 @@ export const calculateBudgetResults = (annualIncome) => {
     wants,
     savingInvesting,
     afterTaxIncome,
-    niContribution,
+    totalNiContribution,
     afterNIIncome: monthlyIncome * 12,
   };
 };

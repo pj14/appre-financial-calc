@@ -34,7 +34,7 @@ const BudgetCalculator = () => {
     try {
       const {
         afterTaxIncome,
-        niContribution,
+        totalNiContribution,
         afterNIIncome,
         needs,
         wants,
@@ -49,14 +49,14 @@ const BudgetCalculator = () => {
         "savingInvesting",
         savingInvesting,
         "niContribution",
-        niContribution,
+        totalNiContribution,
         "afterNIIncome",
         afterNIIncome
       );
 
       setAfterTaxIncome(afterTaxIncome.toFixed(2));
       setAfterNIIncome(afterNIIncome.toFixed(2));
-      setNiContribution(niContribution.toFixed(2));
+      setNiContribution(totalNiContribution.toFixed(2));
       setNeeds(needs.toFixed(2));
       setWants(wants.toFixed(2));
       setSavings(savingInvesting.toFixed(2));
