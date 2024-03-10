@@ -1,18 +1,22 @@
 {
   "files": {
-    "main.css": "/appre-financial-calc/static/css/main.74d5ce89.css",
-    "main.js": "/appre-financial-calc/static/js/main.f537c871.js",
+    "main.css": "/appre-financial-calc/static/css/main.273aeb06.css",
+    "main.js": "/appre-financial-calc/static/js/main.890a7c6d.js",
     "static/js/787.d7dd4861.chunk.js": "/appre-financial-calc/static/js/787.d7dd4861.chunk.js",
+    "static/media/savings-upslash.jpg": "/appre-financial-calc/static/media/savings-upslash.4a471567d54994c3e25e.jpg",
+    "static/media/savings-calc.jpg": "/appre-financial-calc/static/media/savings-calc.306d8f24dbeead54ad7f.jpg",
+    "static/media/compound-calculator.jpg": "/appre-financial-calc/static/media/compound-calculator.2f2f27dbcde38ace095b.jpg",
     "static/media/budget-calculator.png": "/appre-financial-calc/static/media/budget-calculator.9fdd4da8d91206284dd3.png",
     "static/media/compound-calculator.png": "/appre-financial-calc/static/media/compound-calculator.5f12ff4fe1eff7924556.png",
     "static/media/savings-calculator.png": "/appre-financial-calc/static/media/savings-calculator.c2773f86612219021282.png",
+    "static/media/appre-logo-grey-purple.jpg": "/appre-financial-calc/static/media/appre-logo-grey-purple.c83b84d78ffc03d1b773.jpg",
     "index.html": "/appre-financial-calc/index.html",
-    "main.74d5ce89.css.map": "/appre-financial-calc/static/css/main.74d5ce89.css.map",
-    "main.f537c871.js.map": "/appre-financial-calc/static/js/main.f537c871.js.map",
+    "main.273aeb06.css.map": "/appre-financial-calc/static/css/main.273aeb06.css.map",
+    "main.890a7c6d.js.map": "/appre-financial-calc/static/js/main.890a7c6d.js.map",
     "787.d7dd4861.chunk.js.map": "/appre-financial-calc/static/js/787.d7dd4861.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.74d5ce89.css",
-    "static/js/main.f537c871.js"
+    "static/css/main.273aeb06.css",
+    "static/js/main.890a7c6d.js"
   ]
 }
