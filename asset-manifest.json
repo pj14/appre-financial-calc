@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/appre-financial-calc/static/css/main.3035538a.css",
+    "main.css": "/appre-financial-calc/static/css/main.872b0d3b.css",
     "main.js": "/appre-financial-calc/static/js/main.46ccfaba.js",
     "static/js/787.d7dd4861.chunk.js": "/appre-financial-calc/static/js/787.d7dd4861.chunk.js",
     "static/media/savings-upslash.jpg": "/appre-financial-calc/static/media/savings-upslash.4a471567d54994c3e25e.jpg",
@@ -11,12 +11,12 @@
     "static/media/savings-calculator.png": "/appre-financial-calc/static/media/savings-calculator.c2773f86612219021282.png",
     "static/media/appre-logo-grey-purple.jpg": "/appre-financial-calc/static/media/appre-logo-grey-purple.c83b84d78ffc03d1b773.jpg",
     "index.html": "/appre-financial-calc/index.html",
-    "main.3035538a.css.map": "/appre-financial-calc/static/css/main.3035538a.css.map",
+    "main.872b0d3b.css.map": "/appre-financial-calc/static/css/main.872b0d3b.css.map",
     "main.46ccfaba.js.map": "/appre-financial-calc/static/js/main.46ccfaba.js.map",
     "787.d7dd4861.chunk.js.map": "/appre-financial-calc/static/js/787.d7dd4861.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3035538a.css",
+    "static/css/main.872b0d3b.css",
     "static/js/main.46ccfaba.js"
   ]
 }
