@@ -41,19 +41,6 @@ const BudgetCalculator = () => {
         savingInvesting,
       } = calculateBudgetResults(amount);
 
-      console.log(
-        "needs",
-        needs,
-        "wants",
-        wants,
-        "savingInvesting",
-        savingInvesting,
-        "niContribution",
-        totalNiContribution,
-        "afterNIIncome",
-        afterNIIncome
-      );
-
       setAfterTaxIncome(afterTaxIncome.toFixed(2));
       setAfterNIIncome(afterNIIncome.toFixed(2));
       setNiContribution(totalNiContribution.toFixed(2));
@@ -81,12 +68,13 @@ const BudgetCalculator = () => {
           <div>
             <h1>Budget Calculator</h1>
           </div>
-          <div className="created-by-section">
+          {/*<div className="created-by-section">
             <div>Created By</div>
             <div className="appre-logo">
               <img src="appre-logo.png" alt="Appre Logo" />
             </div>
           </div>
+        */}
         </div>
       </header>
       <main>

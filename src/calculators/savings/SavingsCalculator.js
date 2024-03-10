@@ -97,12 +97,13 @@ const SavingsCalculator = () => {
           <div>
             <h1>Savings Calculator</h1>
           </div>
-          <div className="created-by-section">
+          {/*<div className="created-by-section">
             <div>Created By</div>
             <div className="appre-logo">
               <img src="appre-logo.png" alt="Appre Logo" />
             </div>
           </div>
+        */}
         </div>
       </header>
       <main>

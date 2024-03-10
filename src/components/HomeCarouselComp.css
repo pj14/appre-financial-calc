@@ -1,0 +1,29 @@
+.overlay-text-carousel {
+    position: absolute;
+    top: 25%;
+    padding-left: 2rem;
+}
+
+.overlay-text-carousel span {
+    line-height: 4rem;
+    text-wrap: wrap;
+    max-width: 40rem;
+}
+
+.carousel-action-button {
+    width: fit-content;
+    ;
+    margin-top: 1rem !important;
+}
+
+.carousel-image-container::after {
+    content: '';
+    width: 85rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    min-height: 100%;
+    background: radial-gradient(100% 1142.63% at 100% 100%, rgba(0, 51, 93, 0.16) 0, #00192b 100%);
+    mix-blend-mode: multiply;
+    transform: translateX(-50%);
+}
