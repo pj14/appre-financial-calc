@@ -17,12 +17,6 @@ const Media = () => (
       icon={<FacebookOption color="brand" />}
       target="_blank"
     />
-    <Anchor
-      a11yTitle="Follow us on Twitter"
-      href="https://twitter.com/"
-      icon={<Twitter color="brand" />}
-      target="_blank"
-    />
   </Box>
 );
 

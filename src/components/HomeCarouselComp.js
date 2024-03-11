@@ -47,7 +47,7 @@ const HomeCarouselComp = (props) => {
                 </Box>
 
                 <Box className="overlay-text-carousel" position="absolute">
-                  <Text size="2.4rem" weight="bold" color="overlay-white">
+                  <Text size="1.5em" weight="bold" color="overlay-white">
                     Have You Unveiled Your Savings Potential Yet?
                   </Text>
                   <Button
@@ -76,7 +76,7 @@ const HomeCarouselComp = (props) => {
                 </Box>
 
                 <Box className="overlay-text-carousel" position="absolute">
-                  <Text size="2.4rem" weight="bold" color="overlay-white">
+                  <Text size="1.5em" weight="bold" color="overlay-white">
                     Smart Budgeting: Your Path Towards Financial Freedom!
                   </Text>
                   <Button
@@ -105,7 +105,7 @@ const HomeCarouselComp = (props) => {
                 </Box>
 
                 <Box className="overlay-text-carousel" position="absolute">
-                  <Text size="2.4rem" weight="bold" color="overlay-white">
+                  <Text size="1.5em" weight="bold" color="overlay-white">
                     Experience The Power Of Compounding
                   </Text>
                   <Button

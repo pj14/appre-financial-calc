@@ -23,9 +23,9 @@ const Home = () => {
   const tabsRef = useRef(null);
 
   return (
-    <Grommet theme={homeTheme}>
+    <Grommet theme={homeTheme} style={{ overflow: "auto" }}>
       <AppreCalcHeader tabsRef={tabsRef} setIndex={setIndex} />
-      <Box overflow="auto" className="home-container">
+      <Box className="home-container">
         <HomeCarouselComp tabsRef={tabsRef} setIndex={setIndex} />
         <CalculatorCards tabsRef={tabsRef} index={index} setIndex={setIndex} />
         <FooterComp />

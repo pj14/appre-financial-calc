@@ -29,7 +29,11 @@ const AppreCalcHeader = (props) => {
   };
 
   return (
-    <Header background="light-3" sticky="scrollup" pad={{ vertical: "small" }}>
+    <Header
+      background="light-3"
+      pad={{ vertical: "small" }}
+      className="header-wrapper"
+    >
       <ResponsiveContext.Consumer>
         {(size) =>
           size === "small" ? (

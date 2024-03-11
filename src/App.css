@@ -1,13 +1,16 @@
 /* App.css */
 
+
 html,
 body {
-  height: 100%;
+  height: 100vh;
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
   box-sizing: border-box;
-  overflow: hidden;
+  width: 100vw;
+  overflow-x: hidden;
+
   /* Prevent scroll bars */
   /*background: linear-gradient(to bottom right, #6200ee, #ffde59); /* Diagonal gradient background */
   /*color: white*/
@@ -17,7 +20,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 100vw;
+  max-width: 95vw;
   overflow-x: hidden;
 }
 
@@ -35,7 +38,7 @@ body {
 
 
 .container main {
-  max-width: 650px;
+  max-width: 95vw;
 }
 
 .home-page-header-section {
@@ -126,11 +129,14 @@ footer {
   display: block !important;
   height: 90vh;
   scroll-snap-type: y proximity;
+  overscroll-behavior-y: contain;
 }
 
 .carousel-container {
   scroll-snap-align: start;
 }
+
+
 
 .calculator-tab-section {
   scroll-snap-align: start;
@@ -138,10 +144,22 @@ footer {
 
 .footer-container {
   scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+
+.header-wrapper {
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
 }
 
 
-@media (min-width: 640px) {}
+@media (min-width: 640px) {
+
+  html,
+  body {
+    overflow: hidden;
+  }
+}
 
 @media (min-width: 768px) {
   .container {
@@ -166,5 +184,9 @@ footer {
     background-color: #ddd;
     border: 1px solid #ccc;
     border-radius: 5px;
+  }
+
+  .container main {
+    max-width: 650px;
   }
 }

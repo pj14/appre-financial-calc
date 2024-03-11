@@ -1,11 +1,13 @@
 .overlay-text-carousel {
     position: absolute;
-    top: 25%;
+    top: 50%;
     padding-left: 2rem;
+    padding-right: 2rem;
+    transform: translateY(-50%);
 }
 
 .overlay-text-carousel span {
-    line-height: 4rem;
+    line-height: 3rem;
     text-wrap: wrap;
     max-width: 40rem;
 }
@@ -26,4 +28,11 @@
     background: radial-gradient(100% 1142.63% at 100% 100%, rgba(0, 51, 93, 0.16) 0, #00192b 100%);
     mix-blend-mode: multiply;
     transform: translateX(-50%);
+}
+
+@media (min-width: 640px) {
+    .overlay-text-carousel span {
+        line-height: 4rem;
+
+    }
 }
